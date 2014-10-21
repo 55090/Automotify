@@ -1,0 +1,79 @@
+@charset "utf-8";
+
+/***************************************************/
+/*CSS for Viewports with more than 768 pixels width*/
+/***************************************************/
+
+/*<><><><> HEADER-STYLES <><><><>*/
+header 		{	background: 		#fff;
+				padding:			0;
+			}
+#LOGO		{ 	background: 		url(../img/automotify-autoglas-logo.png) no-repeat top left;
+				background-size: 	100%;
+				width: 				600px;
+				height:				145px;
+				margin:				10px;
+				cursor: 			pointer;
+			}
+#sitenav ul	{ 	list-style-type: 	none;
+				margin: 			0;
+				padding:			0;
+				display:			table;
+				width:				100%;
+				background: 		#0099ff;
+			}
+#sitenav li { 	display:			table-cell;
+				background: 		none;
+				padding:			10px 0;
+				margin: 			0;
+				cursor: 			pointer;
+				width:				33%;
+				text-align: 		center;
+				vertical-align: 	middle;
+			}
+#sitenav li:last-of-type {
+				width:				34%;
+			}
+#sitenav
+li:hover	{	background: #f00;
+			}
+#sitenav a 	{	font: 				bolder 40px/55px 'Dosis';
+				color:				#fff;
+				text-decoration:	none;
+				text-transform: 	uppercase;
+			}
+#sitenav
+li:hover a 	{ 	color: 				#fff;
+			}
+/*<><><><> MAIN-STYLES <><><><>*/
+main 		{ 	background: 		#eee;
+				padding:			30px 60px 60px;
+			}
+main article{	font: 				20px/35px 'Verdana';
+				margin-bottom:		20px;
+				background:			#fff;
+				border-radius:		10px;
+				padding:			5px 20px
+			}
+main article h1
+			{	font: 				bolder 40px/55px 'Dosis';
+				color:				#000000;
+			}
+main article p
+			{	margin:				15px 0;
+			}
+
+
+/*<><><><> FOOTER-STYLES <><><><>*/
+footer		{	background:			#f00;
+				position:			fixed;
+				bottom:				0;
+				width:				100%;
+				height:				60px;
+				text-align: right;
+			}
+footer h1	{	font:				40px/55px 'Dosis';
+				letter-spacing: 	10px;
+				color:				#fff;
+				margin:				0;
+			}
