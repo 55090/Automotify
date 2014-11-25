@@ -1,0 +1,53 @@
+@charset "utf-8";
+
+/***********/
+/*Login-div*/
+/***********/
+
+#login		{	position:				absolute;
+				right:					1rem;
+				top:					1rem;}
+.log_input	{	height:					2.5rem; 
+				width:					9.5rem;
+				font-size:				1rem;
+				font-weight: 			bold;
+				color:					#09f;
+				border:					1px solid #09f;
+				background:				#fff;
+				border-radius:			0.5rem;
+				padding-left:			0.5rem;
+				margin:					0.3rem;
+				transition: 			width 0.4s ease;
+				-webkit-transition:		width 0.4s ease;
+				-moz-transition: 		width 0.4s ease;
+				-o-transition: 			width 0.4s ease;
+				-ms-transition: 		width 0.4s ease;
+			}
+.log_input:focus {	width: 				13rem;
+					transition: 		width 0.4s ease;
+					-webkit-transition:	width 0.4s ease;
+					-moz-transition: 	width 0.4s ease;
+					-o-transition: 		width 0.4s ease;
+					-ms-transition: 	width 0.4s ease;
+			}
+.sub_input	{	width:					2.5rem;
+				height:					2.5rem;
+				background:				#09f url(../img/icon_login.svg) no-repeat center;
+				background-size:		70%;
+				border:					1px solid #5577cc;
+				border-radius:			0.5rem;
+				transition: 			background-color 0.4s ease;
+				-webkit-transition:		background-color 0.4s ease;
+				-moz-transition: 		background-color 0.4s ease;
+				-o-transition: 			background-color 0.4s ease;
+				-ms-transition: 		background-color 0.4s ease;
+			}
+.sub_input:hover,
+.sub_input:focus
+			{	background-color:		#f00;
+				transition: 			background-color 0.4s ease;
+				-webkit-transition:		background-color 0.4s ease;
+				-moz-transition: 		background-color 0.4s ease;
+				-o-transition: 			background-color 0.4s ease;
+				-ms-transition: 		background-color 0.4s ease;
+			}

@@ -1,0 +1,141 @@
+﻿<!doctype html>
+
+<html lang="de">
+
+<head>
+
+	<title>Terminverwaltung :: Automotify Autoglas</title>
+
+	<meta charset="utf-8">
+	<meta name="viewport"                   content="width=device-width, initial-scale=1">
+	<meta name="Author"                     content="youandme">
+	<meta name="Title"                      content="">
+	<meta name="Description"                content="">
+	<meta name="Keywords"       lang="de"   content="">
+	<meta name="Keywords"       lang="en"   content="">
+	<meta name="Robots"                     content="index,follow">
+	<link rel="stylesheet"                              									href="../css/basic_styles.css">
+	<link rel="stylesheet" 	media="screen and (max-width: 480px)" 							href="../css/smartphone.css">
+	<link rel="stylesheet" 	media="screen and (min-width: 481px) and (max-width: 767px)" 	href="../css/tablet.css">
+	<link rel="stylesheet" 	media="screen and (min-width: 768px)" 							href="../css/desktop.css">
+	<link rel="Shortcut Icon" 	                        href="../favicon.ico">
+	<link rel="Icon"            type="image/ico" 		href="../favicon.ico">
+	<link rel="image_src"                               href="../img/automotify-autoglas-logo.png">
+	<link rel="canonical"                               href="#">  
+	<script type='text/javascript' src='//code.jquery.com/jquery-1.9.1.js'></script>
+	<script type='text/javascript' src="http://maps.googleapis.com/maps/api/js?sensor=false&extension=.js"></script>
+    <script type='text/javascript' src='../js/gmaps.js'></script>
+	<style>
+	td, th {padding: 5px 15px;}
+	
+	tr:nth-child(even) 		{	background:		 		#ddd;}
+	tr:nth-child(even) td:last-of-type { background: #09f;}
+	tr:nth-child(odd) 		{	background:		 		#eee;}
+	tr:nth-child(odd) td:last-of-type { background: #2Bf;}
+	thead tr 	{	background:	#09f !important;
+					color:		#fff;
+				}
+	thead tr td:last-of-type	{	background:	#09f !important;
+					color:		#fff;
+				}
+	tfoot tr 	{	background:	#f00 !important;
+					color:		#fff;
+				}
+	tfoot tr td:last-of-type	{	background:	#f00 !important;
+					color:		#fff;
+				}
+	</style>
+	</head>
+
+<body>
+<div id="map"></div>
+<header>
+	<div id="LOGO" title="Automotify Autoglas" onclick="location='http://www.bucsi.com'"></div>
+	<nav id="sitenav">
+		<ul>
+			<li onclick="location='../index.html'"><a href="../index.html">Frontend</a></li><li onclick="location='terminverwaltung.html'"><a href="terminverwaltung.html">Terminverwaltung</a></li><li onclick="location='kundenverwaltung.html'"><a href="kundenverwaltung.html">Kundenverwaltung</a></li>
+		</ul>
+	</nav>
+</header>
+<main>
+	<table cellpadding="0" cellspacing="0">
+		<colgroup>
+			<col>
+			<col>
+			<col>
+			<col>
+			<col>
+			<col>
+			<col>
+			<col>
+		</colgroup>
+		<thead>
+			<tr>
+				<th>Datum/Uhrzeit</th>
+				<th>Name</th>
+				<th>Stra&szlig;e</th>
+				<th>PLZ</th>
+				<th>Ort</th>
+				<th>Telefon</th>
+				<th>Optionen</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>28.10.2014 / 10:30</td>
+				<td>Eggert</td>
+				<td>Hafenstraße 12</td>
+				<td>40404</td>
+				<td>Hamburg</td>
+				<td>040-40404040</td>
+				<td><img src="../img/icon_service.svg" height="30px" alt="Service">
+					<img src="../img/icon_contact.svg" height="30px" alt="Kunde kontaktieren">
+				</td>
+			</tr>
+			<tr>
+				<td>28.10.2014 / 13:30</td>
+				<td>Fischer</td>
+				<td>Speicherstadt 12</td>
+				<td>40444</td>
+				<td>Hamburg</td>
+				<td>040-40404143</td>
+				<td><img src="../img/icon_service.svg" height="30px" alt="Service">
+					<img src="../img/icon_contact.svg" height="30px" alt="Kunde kontaktieren">
+				</td>
+			</tr>
+			<tr>
+				<td>30.10.2014 / 10:30</td>
+				<td>Schubert</td>
+				<td>Hansastraße 13</td>
+				<td>13189</td>
+				<td>Berlin</td>
+				<td>030-123321123</td>
+				<td><img src="../img/icon_service.svg" height="30px" alt="Service">
+					<img src="../img/icon_contact.svg" height="30px" alt="Kunde kontaktieren">
+				</td>
+			</tr>
+			
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="8">&#160;</td>
+				<!--// 
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+				<td>7</td>
+				<td>8</td> 
+				//-->				
+			</tr>
+		</tfoot>
+		</table>
+</main>
+<footer>
+	
+</footer>
+
+</body>
+
+</html>
