@@ -14,50 +14,37 @@
     <meta name="Keywords"       lang="de"   content="">
     <meta name="Keywords"       lang="en"   content="">
     <meta name="Robots"                     content="index,follow">
-    <link rel="stylesheet"                              									href="css/basic_styles.css">
-	<link rel="stylesheet" 	media="screen and (max-width: 480px)" 							href="css/smartphone.css">
-	<link rel="stylesheet" 	media="screen and (min-width: 481px) and (max-width: 767px)" 	href="css/tablet.css">
-	<link rel="stylesheet" 	media="screen and (min-width: 768px)" 							href="css/desktop.css">
+    <link rel="stylesheet"                              									href="../../Desktop/changes/css/basic_styles.css">
+	<link rel="stylesheet" 	media="screen and (max-width: 480px)" 							href="../../Desktop/changes/css/smartphone.css">
+	<link rel="stylesheet" 	media="screen and (min-width: 481px) and (max-width: 767px)" 	href="../../Desktop/changes/css/tablet.css">
+	<link rel="stylesheet" 	media="screen and (min-width: 768px)" 							href="css/desktop_additional.css">
+	<link rel="stylesheet" 	media="screen and (min-width: 768px)" 							href="../../Desktop/changes/css/login.css">
     <link rel="Shortcut Icon" 	                        href="favicon.ico">
     <link rel="Icon"            type="image/ico" 		href="favicon.ico">
     <link rel="image_src"                               href="img/automotify-autoglas-logo.png">
     <link rel="canonical"                               href="#">
+    <script type="text/javascript" src="../../Desktop/changes/js/picture.js"></script>
+    <script type="text/javascript" src="../../Desktop/changes/js/formValidation.js"></script>
+	
 </head>
 
-<body>
-
+<body id="start">
 <header>
-    <div id="LOGO" title="Automotify Autoglas" onclick="location='index.html'"></div>
+    <div id="LOGO" title="Automotify Autoglas" onclick="location='http://www.bucsi.com'"></div>
+	<div id="login"><form action="backend/terminverwaltung.html"><input type="text" name="email" placeholder="username" required class="log_input"><input placeholder="password" type="password" required class="log_input"><input name="Login" id="LoginButton" type="submit" value="" class="sub_input"></form></div>
     <nav id="sitenav">
+		<div></div>
         <ul>
-			<li onclick="location='service.html'"><a href="service.html">Service</a></li><li onclick="location='termin.html'"><a href="termin.html">Termin vereinbaren!</a></li><li onclick="location='kontakt.html'"><a href="kontakt.html">Kontakt</a></li>
+			<li onclick="location='service.html'"><a href="service.html">Service</a></li><li onclick="location='termin.php'"><a href="termin.php">Termin vereinbaren!</a></li><li onclick="location='kontakt.html'"><a href="kontakt.html">Kontakt</a></li>
         </ul>
     </nav>
 </header>
 <main>
-	<article>
-		<h1>Steinschlag? Wir helfen weiter!</h1>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-	</article>
 
-	<article>
-		<h1>Matte verschlissene Scheinwerfer? Wir helfen weiter!</h1>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-	</article>
-
-	<article>
-		<h1>Ihr Profi für Autoglas!</h1>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-	</article>
 </main>
 <footer>
 	<h1>Hotline: 0800 - 80 00 00 6</h1>
 </footer>
-
 </body>
 
 </html>

@@ -15,5 +15,23 @@ header			{ 	display: 			block;
 					margin:				0;
 					padding:			0;
 				}
-body 		{ 	background: 		#fff;
-			}
+body 			{ 	background: 		#fff;
+				}
+a:link, 
+a:active, 
+a:focus, 
+a:visited 		{	color:				#09f;
+					text-decoration:	none;
+				}
+a:link:hover, 
+a:active:hover, 
+a:focus:hover, 
+a:visited:hover	{	color:				#f00;
+				}
+#map 			{	height: 			100%;
+					width: 				100%;
+					left: 				0;
+					position: 			absolute;
+					top: 				0;
+					z-index:			-1;				
+				}
