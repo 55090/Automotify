@@ -1,11 +1,19 @@
-window.addEventListener("load",pruefeFormular, false);
-var login=document.getElementById('login');
-
-function pruefeFormuflar(){
-    document.getElementById('feedback').innerHTML="<h2>Eingefügte Überschrift</h2>";
-//document.writeln("Zerstörende Ausgabe"); //just test...
+window.onload = function() {
+    LoginButton.addEventListener('click', validateEmail, true);
 }
-console.log("Output in das Log Window des Browsers ausgegeben");
-window.alert('Diese Ausgabe muss weggeklickt werden!');
-console.log("login name ist: "+login);
 
+function validateEmail(){
+    if(form.email.value=="") {
+
+        alert("Sie haben nichts eingegeben");
+
+    }
+    else if(!form.email.value.endsWith('@beuth-hochschule.de')){
+        form.action="index.html";
+        alert('Für unseren Mitgliederbereich sind nur Angehörige der Beuth-Hochschule mit einer gültigen Beuth Email Adresse zugelassen');
+    }
+}
+
+String.prototype.endsWith = function (s) {
+    return this.length >= s.length && this.substr( this.length - s.length) == s;
+}
