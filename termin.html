@@ -18,6 +18,7 @@
 	<link rel="stylesheet" 	media="screen and (max-width: 480px)" 							href="css/smartphone.css">
 	<link rel="stylesheet" 	media="screen and (min-width: 481px) and (max-width: 767px)" 	href="css/tablet.css">
 	<link rel="stylesheet" 	media="screen and (min-width: 768px)" 							href="css/desktop.css">
+	<link rel="stylesheet" 	media="screen and (min-width: 768px)" 							href="css/login.css">
 	<link rel="Shortcut Icon" 	                        href="favicon.ico">
 	<link rel="Icon"            type="image/ico" 		href="favicon.ico">
 	<link rel="image_src"                               href="img/automotify-autoglas-logo.png">
@@ -28,6 +29,13 @@
 
 <header>
 	<div id="LOGO" title="Automotify Autoglas" onclick="location='index.html'"></div>
+	<div id="login">
+		<form name="form" action="backend/terminverwaltung.html">
+			<input type="text" 		name="email" 	id="log_email"		placeholder="username" required class="log_input">
+			<input type="password" 	name="password" id="log_passord"	placeholder="password" required class="log_input">
+			<input type="submit" 	name="Login" 	id="LoginButton" 	value=""	 					class="sub_input">
+		</form>
+	</div>
 	<nav id="sitenav">
 		<ul>
 			<li onclick="location='service.html'"><a href="service.html">Service</a></li><li onclick="location='termin.html'"><a href="termin.html">Termin vereinbaren!</a></li><li onclick="location='kontakt.html'"><a href="kontakt.html">Kontakt</a></li>

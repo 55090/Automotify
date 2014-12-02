@@ -31,11 +31,8 @@ function showFixedScreen(){
     bodyTag.style.backgroundSize = 'cover';
     bodyTag.style.backgroundAttachment = 'fixed';
     bodyTag.style.transition = 'all 6s ease';
-    setTimeout(function(){
+    /*setTimeout(function(){
                 document.getElementById('welcome').style.display = 'block';
               },4000);
-    setTimeout(function(){document.location="service.html";},12000);
-}
-function showNextPage() {
-
+    setTimeout(function(){document.location="service.html";},12000);*/
 }

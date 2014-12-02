@@ -18,6 +18,7 @@
 	<link rel="stylesheet" 	media="screen and (max-width: 480px)" 							href="css/smartphone.css">
 	<link rel="stylesheet" 	media="screen and (min-width: 481px) and (max-width: 767px)" 	href="css/tablet.css">
 	<link rel="stylesheet" 	media="screen and (min-width: 768px)" 							href="css/desktop.css">
+	<link rel="stylesheet" 	media="screen and (min-width: 768px)" 							href="css/login.css">
 	<link rel="Shortcut Icon" 	                        href="favicon.ico">
 	<link rel="Icon"            type="image/ico" 		href="favicon.ico">
 	<link rel="image_src"                               href="img/automotify-autoglas-logo.png">
@@ -28,6 +29,13 @@
 
 <header>
 	<div id="LOGO" title="Automotify Autoglas" onclick="location='http://www.bucsi.com'"></div>
+	<div id="login">
+		<form name="form" action="backend/terminverwaltung.html">
+			<input type="text" 		name="email" 	id="log_email"		placeholder="username" required class="log_input">
+			<input type="password" 	name="password" id="log_passord"	placeholder="password" required class="log_input">
+			<input type="submit" 	name="Login" 	id="LoginButton" 	value=""	 					class="sub_input">
+		</form>
+	</div>
 	<nav id="sitenav">
 		<ul>
 			<li onclick="location='service.html'"><a href="service.html">Service</a></li><li onclick="location='termin.php'"><a href="termin.php">Termin vereinbaren!</a></li><li onclick="location='kontakt.html'"><a href="kontakt.html">Kontakt</a></li>
@@ -36,38 +44,13 @@
 </header>
 <main>
 	<article>
-		<h1>Service Page</h1>
-		<p>
-			Text here...
-		</p>
-	</article>
-
-	<article>
-		<h1>Article 1</h1>
-		<p>
-			Article text...
-		</p>
-	</article>
-
-	<article>
-		<h1>Article 2</h1>
-		<p>
-			Article text...
-		</p>
-	</article>
-
-	<article>
-		<h1>Article 3</h1>
-		<p>
-			Article text...
-		</p>
-	</article>
-
-	<article>
-		<h1>Article 4</h1>
-		<p>
-			Article text...
-		</p>
+		<h1>Service</h1>
+		<ul>
+			<li>Kostenlose Steinschlagreparatur in 30 Minuten</li>
+			<li>Autoglas-Neueinbau in 3 Stunden</li>
+			<li>Direkte Abwicklung mit Ihrer Versicherung</li>
+			<li>Restauration von verschlissenen Kunststoff-Scheinwerfern</li>
+		</ul>
 	</article>
 </main>
 <footer>

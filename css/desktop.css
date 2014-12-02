@@ -123,20 +123,30 @@ li:hover a 	{ 	color: 				#fff;
 	-ms-transition: 	font-size 0.5s ease;
 }
 /*<><><><> MAIN-STYLES <><><><>*/
-main 		{ 	padding:			30px 60px 60px;
+main 		{ 	padding:			0.5rem 1.0rem 1.0rem;
 			}
-main article{	font: 				20px/35px 'Verdana';
+main article	{	font: 				20px/35px Verdana;
+				color:				#000;
 				margin-bottom:		20px;
-				background:			#fff;
+				background:			rgba(255,255,255,0.5);
 				border-radius:		10px;
 				padding:			5px 20px
 			}
 main article h1
-			{	font: 				bolder 40px/55px 'Dosis';
-				color:				#000000;
+			{	font: 				bolder 1.5rem/2.0rem 'Dosis';
+				color:				#fff;
+				text-shadow: 		0 0 0.3rem #000;
 			}
 main article p
 			{	margin:				15px 0;
+				font:				bold 1rem/1.5rem Helvetica;
+			}
+main article ul 	{	margin:				1.7rem;
+			}
+main article ul li	{	font:					bold 1rem/1.5rem Helvetica;
+				-webkit-font-smoothing: antialiased;
+				text-shadow: 			1px 1px 1px rgba(0,0,0,0.004);
+				color:					#000;
 			}
 
 
