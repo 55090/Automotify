@@ -24,6 +24,7 @@
 				-ms-transition: 		width 0.4s ease;
 			}
 .log_input:focus {	width: 				13rem;
+					box-shadow:			0 0 20px #09F;
 					transition: 		width 0.4s ease;
 					-webkit-transition:	width 0.4s ease;
 					-moz-transition: 	width 0.4s ease;
