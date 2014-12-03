@@ -45,10 +45,60 @@
 </header>
 <main>
 	<article>
-		<h1>Termin vereibaren...</h1>
-		<form action="" method="post">
-			<fieldset ><legend>Kundendretails:</legend></fieldset>
-		</form>
+        <h3><ul>Vereinbaren Sie jetzt einen Termin mit uns:</ul></h3>
+        <form class="formular" method="post">
+
+            <fieldset class="kunde"><legend>Kundendetails:</legend>
+
+                <li>
+                    <label>Vorname:</label>
+                    <input type="text" name="Vorname: "  required>
+                    <br><br>
+                    <label>Nachname:</label>
+                    <input type="text" name="Nachname: "  required>
+                    <br><br>
+                    <label>TelNummer:</label>
+                    <input type="tel" name="Nummer:"required>
+                    <br><br>
+                    <label>E Mail:</label>
+                    <input type="email" name="email" placeholder="your email address">
+                    <br><br>
+                    </fieldset>
+
+                    <fieldset class="auto"><legend>Autodetails :</legend>
+                    <label>Fahrzeug:</label>
+                    <input type="text" name="fahrzeug" required>
+                    <br><br>
+                    <label>Schlüsselnummer:</label>
+                    <input type="number" name="keynumber" required>
+                    <br><br>
+                    <label>Baujahr:</label>
+                    <input type="date" name="Baujahr" required>
+                    <br><br>
+                    <label>Service-<br>dienstleistung :</label>
+                   <p> <input type="checkbox"><a>Scheibenwechsel</a>
+                        <br><br>
+                       <input type="checkbox"><a>Steinschlagreperatur</a>
+                        <br><br></p>
+                    <label>Versicherungs-<br>umfang:</label>
+                    <p><input type="checkbox">Teilkasko
+                        <br><br>
+                        <input type="checkbox">nur Haftpflicht
+                    <br><br></p>
+                        <fieldset class="weiter">
+                    <input  type="submit" value="weiter"></fieldset>
+                        <input type="checkbox" action="select.htm">
+
+                                <select name="cars" size="3">
+                                    <option>Audi</option>
+                                    <option>Mercedes</option>
+                                    <option>BMW</option>
+                                </select>
+
+
+            </fieldset>
+        </form>
+
 	</article>
 </main>
 <footer>
