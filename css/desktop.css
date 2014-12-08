@@ -14,15 +14,14 @@ body 			{ 	background: 			#fff no-repeat center;
 
 
 /*<><><><> HEADER-STYLES <><><><>*/
-header 		{	background: 		#none;
-	padding:			0;
+header 		{	background: 		none;
+				padding:			0;
 }
 #LOGO		{ 	position:				relative;
 	top: 					0;
 	left: 					0;
 	margin:					10px 10px 10px 10px;
 	background:				url(../img/automotify-autoglas-logo.png) no-repeat top left;
-	background-size: 		contain;
 	width: 					400px;
 	height:					97px;
 	cursor: 				pointer;
@@ -120,7 +119,7 @@ li:hover a 	{ 	color: 				#fff;
 	-ms-transition: 	font-size 0.5s ease;
 }
 /*<><><><> MAIN-STYLES <><><><>*/
-main 		{ 	padding:			0.5rem 1.0rem 1.0rem;
+main 		{ 	padding:			1.5rem 6.0rem 1.0rem;
 			}
 main article	{	font: 				20px/35px Verdana;
 				color:				#000;
@@ -129,11 +128,18 @@ main article	{	font: 				20px/35px Verdana;
 				border-radius:		10px;
 				padding:			5px 20px
 			}
-main article h1
-			{	font: 				bolder 1.5rem/2.0rem 'Dosis';
-				color:				#fff;
-				text-shadow: 		0 0 0.3rem #000;
-			}
+main h1
+{	font: 				bolder 2.5rem/3.5rem 'Dosis';
+	color:				#fff;
+	text-shadow: 		0 0 0.3rem #000;
+}
+
+main h2
+{	font: 				bolder 2.0rem/3.0rem 'Dosis';
+	color:				#fff;
+	text-shadow: 		0 0 0.7rem #06a;
+}
+
 main article p
 			{	margin:				15px 0;
 				font:				bold 1rem/1.5rem Helvetica;

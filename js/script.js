@@ -1,9 +1,10 @@
 window.onload = function() {
-    addLogInListener();
+    if(document.getElementById('LOGIN')) {
+        addLogInListener();
+    }
     if(document.getElementById('Telefonnummer')){
         addTerminListener();
     }
-
     if(document.getElementById('start')){
 		showFixedScreen();
 	}
@@ -48,8 +49,8 @@ function addTerminListener(){
     document.getElementById('Telefonnummer').addEventListener('keyup', validateTelefonNr,true);
     document.getElementById('PLZ').          addEventListener('keyup', validateZipCode,  true);
     document.getElementById('Email').        addEventListener('keyup', validateEmail,    true);
-    document.getElementById('HSN').          addEventListener('keyup', validateHSN,    true);
-    document.getElementById('TSN').          addEventListener('keyup', validateTSN,    true);
+    document.getElementById('HSN').          addEventListener('keyup', validateHSN,      true);
+    document.getElementById('TSN').          addEventListener('keyup', validateTSN,      true);
 
 }
 
@@ -104,7 +105,7 @@ function validateTelefonNr() {
 
 function validateHSN() {
     var element = event.srcElement;
-    filter = /^[0-9]{4}/;
+    filter = /^[0-9]{4}$/;
     if (!filter.test(element.value)) {
         element.setAttribute("style", "box-shadow: 0 0 20px #F00;");
     } else {

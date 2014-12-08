@@ -33,9 +33,9 @@
 	<div id="LOGO" title="Automotify Autoglas" onclick="location='index.html'"></div>
 
 	<form id="LOGIN" name="form" action="backend/terminverwaltung.html">
-		<input type="text" 		name="log_email" 	id="log_email"		placeholder="username" required class="log_input">
-		<input type="password" 	name="log_password" id="log_password"	placeholder="password" required class="log_input">
-		<input type="submit" 	name="Login" 	id="LoginButton" 	value=""	 					class="sub_input">
+		<input type="text" 		name="log_email" 	id="log_email"		placeholder="username" required>
+		<input type="password" 	name="log_password" id="log_password"	placeholder="password" required>
+		<input type="submit" 	name="Login" 		id="LoginButton" 	value="">
 	</form>
 
 	<nav id="sitenav">
@@ -85,11 +85,11 @@
 				<input type="text" name="Fahrzeug" placeholder="z.B.: VW Passat Variant" required id="Fahrzeug" class="textfields">
 				<br style="clear:left;">
 
-				<label>Schlüsselnummer HSN (2.1):</label>
+				<label>HSN (2.1):</label>
 				<input type="number" name="HSN" placeholder="4-Stellig (nur Zahlen)" required id="HSN" class="textfields">
 				<br style="clear:left;">
 
-				<label>Schlüsselnummer TSN (2.2):</label>
+				<label>TSN (2.2):</label>
 				<input type="text" name="TSN" placeholder="erste 3 Stellen (entw. nur Zahlen oder nur Buchstaben)" required id="TSN" class="textfields">
 				<br style="clear:left;">
 
@@ -97,20 +97,20 @@
 				<input type="date" name="Baujahr" required class="textfields">
 				<br style="clear:left;">
 
-				<label>Service-<br>dienstleistung :</label>
+				<label>Service:</label>
 			    <input type="radio" name="Service" value="Scheibenwechsel">Scheibenwechsel<br>
 				<input type="radio" name="Service" value="Steinschlagreparatur">Steinschlagreparatur
 				<br style="clear:left;">
 
-				<label>Versicherungs-<br>umfang:</label>
+				<label>Versicherungsumfang:</label>
 				<input type="radio" name="Versicherung" value="Teilkasko">Teilkasko<br>
 				<input type="radio" name="Versicherung" value="Haftpflicht">Haftpflicht
 				<br style="clear:left;">
 			</fieldset>
 
-			<fieldset class="weiter">
+
 				<input  type="submit" value="weiter"></fieldset>
-			</fieldset>
+
         </form>
 
 	</article>
