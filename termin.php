@@ -187,7 +187,7 @@ $form_data = array();
 	<link rel="stylesheet" 	media="screen and (max-width: 480px)" 							href="css/smartphone.css">
 	<link rel="stylesheet" 	media="screen and (min-width: 481px) and (max-width: 767px)" 	href="css/tablet.css">
 	<link rel="stylesheet" 	media="screen and (min-width: 768px)" 							href="css/desktop.css">
-	<link rel="Stylesheet" 	media="screen"													href="css/form.css">
+	<link rel="Stylesheet" 	media="screen"													href="css/form1.css">
 	<link rel="Shortcut Icon" 	                        href="favicon.ico">
 	<link rel="Icon"            type="image/ico" 		href="favicon.ico">
 	<link rel="image_src"                               href="img/automotify-autoglas-logo.png">

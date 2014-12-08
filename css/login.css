@@ -4,14 +4,13 @@
 /*Login-div*/
 /***********/
 
-#login		{	position:				absolute;
+#LOGIN		{	position:				absolute;
 				right:					1rem;
 				top:					1rem;
+				display: 				table;
 			}
-#login form	{	display: 				table;
-			}
-.log_input	{	display:				table-cell;
-				height:					2.5rem; 
+#LOGIN input	{	display:				table-cell;
+				height:					2.5rem;
 				width:					9.5rem;
 				font-size:				1rem;
 				font-weight: 			bold;
@@ -27,7 +26,7 @@
 				-o-transition: 			width 0.4s ease;
 				-ms-transition: 		width 0.4s ease;
 			}
-.log_input:focus {	width: 				13rem;
+#LOGIN input:focus {	width: 				13rem;
 					box-shadow:			0 0 20px #09F;
 					transition: 		width 0.4s ease;
 					-webkit-transition:	width 0.4s ease;
@@ -35,21 +34,22 @@
 					-o-transition: 		width 0.4s ease;
 					-ms-transition: 	width 0.4s ease;
 			}
-.sub_input	{	display:				table-cell;
+#LOGIN input:last-of-type	{	display:				table-cell;
 				width:					2.5rem;
 				height:					2.5rem;
 				background:				#09f url(../img/icon_login.svg) no-repeat center;
 				background-size:		70%;
 				border:					1px solid #5577cc;
 				border-radius:			0.5rem;
+				margin:					0.3rem;
 				transition: 			background-color 0.4s ease;
 				-webkit-transition:		background-color 0.4s ease;
 				-moz-transition: 		background-color 0.4s ease;
 				-o-transition: 			background-color 0.4s ease;
 				-ms-transition: 		background-color 0.4s ease;
 			}
-.sub_input:hover,
-.sub_input:focus
+#LOGIN input:last-of-type:hover,
+#LOGIN input:last-of-type:focus
 			{	background-color:		#f00;
 				transition: 			background-color 0.4s ease;
 				-webkit-transition:		background-color 0.4s ease;
@@ -57,3 +57,53 @@
 				-o-transition: 			background-color 0.4s ease;
 				-ms-transition: 		background-color 0.4s ease;
 			}
+
+
+
+
+#TERMIN {	font-size: 			20px;
+			margin: 			0 50px 50px;
+}
+
+#TERMIN fieldset{	border-radius: 		20px;
+					margin: 			0;
+					padding: 			0;
+}
+
+#TERMIN legend {	margin-left:	30px;
+					font:			bolder 25px/35px 'Dosis';
+}
+
+
+#TERMIN label { 	margin:				0 1rem;
+					padding:			0.3rem;
+					width:              13rem;
+					display:            table-cell;
+					float:              left;
+					clear:				both;
+					font-size: 			smaller;
+}
+#TERMIN .textfields {	width:              	50%;
+				display: table-cell;
+				height:					2.5rem;
+				font-size:				1rem;
+				font-weight: 			bold;
+				color:					#09f;
+				border:					1px solid #09f;
+				background:				#fff;
+				border-radius:			0.5rem;
+				padding-left:			0.5rem;
+				margin:					0.3rem;
+				transition: 			width 0.4s ease;
+				-webkit-transition:		width 0.4s ease;
+				-moz-transition: 		width 0.4s ease;
+				-o-transition: 			width 0.4s ease;
+				-ms-transition: 		width 0.4s ease;
+}
+#TERMIN .textfields:focus {	box-shadow:			0 0 20px #09F;
+						transition: 		width 0.4s ease;
+						-webkit-transition:	width 0.4s ease;
+						-moz-transition: 	width 0.4s ease;
+						-o-transition: 		width 0.4s ease;
+						-ms-transition: 	width 0.4s ease;
+}

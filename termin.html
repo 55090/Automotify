@@ -19,6 +19,7 @@
 	<link rel="stylesheet" 	media="screen and (min-width: 481px) and (max-width: 767px)" 	href="css/tablet.css">
 	<link rel="stylesheet" 	media="screen and (min-width: 768px)" 							href="css/desktop.css">
 	<link rel="stylesheet" 	media="screen and (min-width: 768px)" 							href="css/login.css">
+
 	<link rel="Shortcut Icon" 	                        href="favicon.ico">
 	<link rel="Icon"            type="image/ico" 		href="favicon.ico">
 	<link rel="image_src"                               href="img/automotify-autoglas-logo.png">
@@ -30,13 +31,13 @@
 
 <header>
 	<div id="LOGO" title="Automotify Autoglas" onclick="location='index.html'"></div>
-	<div id="login">
-		<form name="form" action="backend/terminverwaltung.html">
-			<input type="text" 		name="email" 	id="log_email"		placeholder="username" required class="log_input">
-			<input type="password" 	name="password" id="log_passord"	placeholder="password" required class="log_input">
-			<input type="submit" 	name="Login" 	id="LoginButton" 	value=""	 					class="sub_input">
-		</form>
-	</div>
+
+	<form id="LOGIN" name="form" action="backend/terminverwaltung.html">
+		<input type="text" 		name="log_email" 	id="log_email"		placeholder="username" required class="log_input">
+		<input type="password" 	name="log_password" id="log_password"	placeholder="password" required class="log_input">
+		<input type="submit" 	name="Login" 	id="LoginButton" 	value=""	 					class="sub_input">
+	</form>
+
 	<nav id="sitenav">
 		<ul>
 			<li onclick="location='service.html'"><a href="service.html">Service</a></li><li onclick="location='termin.html'"><a href="termin.html">Termin vereinbaren!</a></li><li onclick="location='kontakt.html'"><a href="kontakt.html">Kontakt</a></li>
@@ -45,58 +46,71 @@
 </header>
 <main>
 	<article>
-        <h3><ul>Vereinbaren Sie jetzt einen Termin mit uns:</ul></h3>
-        <form class="formular" method="post">
+        <h1>Vereinbaren Sie jetzt einen Termin mit uns:</h1>
+        <form id="TERMIN" method="post">
 
             <fieldset class="kunde"><legend>Kundendetails:</legend>
 
-                <li>
-                    <label>Vorname:</label>
-                    <input type="text" name="Vorname: "  required>
-                    <br><br>
-                    <label>Nachname:</label>
-                    <input type="text" name="Nachname: "  required>
-                    <br><br>
-                    <label>TelNummer:</label>
-                    <input type="tel" name="Nummer:"required>
-                    <br><br>
-                    <label>E Mail:</label>
-                    <input type="email" name="email" placeholder="your email address">
-                    <br><br>
-                    </fieldset>
+				<label>Vorname:</label>
+				<input type="text" name="Vorname" placeholder="Vorname"  required id="Vorname" class="textfields">
+				<br style="clear:left;">
 
-                    <fieldset class="auto"><legend>Autodetails :</legend>
-                    <label>Fahrzeug:</label>
-                    <input type="text" name="fahrzeug" required>
-                    <br><br>
-                    <label>Schlüsselnummer:</label>
-                    <input type="number" name="keynumber" required>
-                    <br><br>
-                    <label>Baujahr:</label>
-                    <input type="date" name="Baujahr" required>
-                    <br><br>
-                    <label>Service-<br>dienstleistung :</label>
-                   <p> <input type="checkbox"><a>Scheibenwechsel</a>
-                        <br><br>
-                       <input type="checkbox"><a>Steinschlagreperatur</a>
-                        <br><br></p>
-                    <label>Versicherungs-<br>umfang:</label>
-                    <p><input type="checkbox">Teilkasko
-                        <br><br>
-                        <input type="checkbox">nur Haftpflicht
-                    <br><br></p>
-                        <fieldset class="weiter">
-                    <input  type="submit" value="weiter"></fieldset>
-                        <input type="checkbox" action="select.htm">
+				<label>Nachname:</label>
+				<input type="text" name="Nachname" placeholder="Nachname"  required id="Nachname" class="textfields">
+				<br style="clear:left;">
 
-                                <select name="cars" size="3">
-                                    <option>Audi</option>
-                                    <option>Mercedes</option>
-                                    <option>BMW</option>
-                                </select>
+				<label>Straße / Nr:</label>
+				<input type="text" name="Strasse" placeholder="Straße und Hausnummer" required id="Strasse" class="textfields">
+				<br style="clear:left;">
 
+				<label>Postleitzahl:</label>
+				<input type="text" name="PLZ" placeholder="Postleitzahl" required id="PLZ" class="textfields">
+				<br style="clear:left;">
 
-            </fieldset>
+				<label>Ort:</label>
+				<input type="text" name="Ort" placeholder="Ort" required id="Ort" class="textfields">
+				<br style="clear:left;">
+
+				<label>TelNummer:</label>
+				<input type="tel" name="Telefonnummer" placeholder="Telefonnummer" required id="Telefonnummer" class="textfields">
+				<br style="clear:left;">
+
+				<label>E Mail:</label>
+				<input type="email" name="Email" placeholder="E-Mail-Adresse" required id="Email" class="textfields">
+			</fieldset>
+
+			<fieldset class="auto"><legend>Autodetails:</legend>
+
+				<label>Fahrzeug:</label>
+				<input type="text" name="Fahrzeug" placeholder="z.B.: VW Passat Variant" required id="Fahrzeug" class="textfields">
+				<br style="clear:left;">
+
+				<label>Schlüsselnummer HSN (2.1):</label>
+				<input type="number" name="HSN" placeholder="4-Stellig (nur Zahlen)" required id="HSN" class="textfields">
+				<br style="clear:left;">
+
+				<label>Schlüsselnummer TSN (2.2):</label>
+				<input type="text" name="TSN" placeholder="erste 3 Stellen (entw. nur Zahlen oder nur Buchstaben)" required id="TSN" class="textfields">
+				<br style="clear:left;">
+
+				<label>Baujahr:</label>
+				<input type="date" name="Baujahr" required class="textfields">
+				<br style="clear:left;">
+
+				<label>Service-<br>dienstleistung :</label>
+			    <input type="radio" name="Service" value="Scheibenwechsel">Scheibenwechsel<br>
+				<input type="radio" name="Service" value="Steinschlagreparatur">Steinschlagreparatur
+				<br style="clear:left;">
+
+				<label>Versicherungs-<br>umfang:</label>
+				<input type="radio" name="Versicherung" value="Teilkasko">Teilkasko<br>
+				<input type="radio" name="Versicherung" value="Haftpflicht">Haftpflicht
+				<br style="clear:left;">
+			</fieldset>
+
+			<fieldset class="weiter">
+				<input  type="submit" value="weiter"></fieldset>
+			</fieldset>
         </form>
 
 	</article>

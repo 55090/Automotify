@@ -19,8 +19,8 @@ header 		{	background: 		#none;
 }
 #LOGO		{ 	position:				relative;
 	top: 					0;
-	left: 					50%;
-	margin:					10px 10px 10px -200px;
+	left: 					0;
+	margin:					10px 10px 10px 10px;
 	background:				url(../img/automotify-autoglas-logo.png) no-repeat top left;
 	background-size: 		contain;
 	width: 					400px;

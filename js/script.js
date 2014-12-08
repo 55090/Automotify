@@ -1,25 +1,97 @@
 window.onload = function() {
-    var email_in = document.getElementById('log_email');
-	email_in.addEventListener('keyup', validateEmail, true);
+    addLogInListener();
+    if(document.getElementById('Telefonnummer')){
+        addTerminListener();
+    }
+
     if(document.getElementById('start')){
 		showFixedScreen();
 	}
 }
 
+function addLogInListener(){
+    document.getElementById('log_email').   addEventListener('keyup', validateEmail,         true);
+    document.getElementById('log_password').addEventListener('keyup', validatePasswordChars, true);
+}
+
+function addTerminListener(){
+    document.getElementById('Telefonnummer').addEventListener('keyup', validateTelefonNr,true);
+    document.getElementById('PLZ').          addEventListener('keyup', validateZipCode,  true);
+    document.getElementById('Email').        addEventListener('keyup', validateEmail,    true);
+    document.getElementById('HSN').          addEventListener('keyup', validateHSN,    true);
+    document.getElementById('TSN').          addEventListener('keyup', validateTSN,    true);
+
+}
+
+
+/**
+ * START
+ * Login Validations
+ */
 function validateEmail(){
-	filter = /^([a-zA-Z0-9_\.\-])+\@beuth-hochschule.de/;
-	if (!filter.test(form.email.value)) {
-		document.getElementById('log_email').style.setProperty('box-shadow', '0 0 20px #F00');
-    }
-    else {
-		document.getElementById('log_email').style.setProperty('box-shadow', '0 0 20px #3A2');
-        //setTimeout(function(){form.action="backend/terminverwaltung.html;}",3000);
+    var element = event.srcElement;
+    filter = /^([a-zA-Z0-9_\.\-])+\@beuth-hochschule.de/;
+	if (!filter.test(element.value)) {
+		element.setAttribute("style", "box-shadow: 0 0 20px #F00;");
+    } else {
+        element.setAttribute("style", "box-shadow: 0 0 20px #3A2;");
     }
 }
 
-String.prototype.endsWith = function (s) {
-    return this.length >= s.length && this.substr( this.length - s.length+1 ).toLowerCase() == s.toLowerCase();
-};
+function validatePasswordChars(){
+    var element = event.srcElement;
+    filter = /(?=.*[A-Za-z0-9])[A-Za-z0-9, .!@#$%^&*()_]{5,25}/;
+    if(!filter.test(element.value)){
+        element.setAttribute("style", "box-shadow: 0 0 20px #F00;");
+    } else {
+        element.setAttribute("style", "box-shadow: 0 0 20px #3A2;");
+    }
+}
+
+/**
+ * START
+ * Termin Validations
+ */
+function validateZipCode(){
+    var element = event.srcElement;
+    filter = /^([0]{1}[1-9]{1}|[1-9]{1}[0-9]{1})[0-9]{3}$/;
+    if (!filter.test(element.value)) {
+        element.setAttribute("style", "box-shadow: 0 0 20px #F00;");
+    } else {
+        element.setAttribute("style", "box-shadow: 0 0 20px #3A2;");
+    }
+}
+
+function validateTelefonNr() {
+    var element = event.srcElement;
+    filter = /^((\+|00)[1-9]\d{0,3}|0 ?[1-9]|\(00? ?[1-9][\d ]*\))[\d\-/ ]*$/;
+    if (!filter.test(element.value)) {
+        element.setAttribute("style", "box-shadow: 0 0 20px #F00;");
+    } else {
+        element.setAttribute("style", "box-shadow: 0 0 20px #3A2;");
+    }
+}
+
+function validateHSN() {
+    var element = event.srcElement;
+    filter = /^[0-9]{4}/;
+    if (!filter.test(element.value)) {
+        element.setAttribute("style", "box-shadow: 0 0 20px #F00;");
+    } else {
+        element.setAttribute("style", "box-shadow: 0 0 20px #3A2;");
+    }
+}
+function validateTSN() {
+    var element = event.srcElement;
+    filter = /^[A-Z]{3}$/;
+    if (!filter.test(element.value.toUpperCase())) {
+        element.setAttribute("style", "box-shadow: 0 0 20px #F00;");
+        element.value = element.value.toUpperCase();
+    } else {
+        element.setAttribute("style", "box-shadow: 0 0 20px #3A2;");
+        element.value = element.value.toUpperCase();
+    }
+}
 
 
 
@@ -31,10 +103,12 @@ function showFixedScreen(){
 	changeBgImage(bodyTag);
 
     setTimeout(function(){
-                document.getElementById('welcome').style.display = 'block';
+                var welcome = document.getElementById('welcome');
+                welcome.setAttribute("style", "display: block;");
               },4000);
-    setTimeout(function(){document.location="service.html";},12000);
+    setTimeout(function(){document.location="service.html";},24000);
 }
+
 function changeBgImage(element){
 	element.style.setProperty("transition", 		"all 6s ease");
 	element.style.setProperty("-webkit-transition", "all 6s ease");

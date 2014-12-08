@@ -25,11 +25,17 @@
 <body id="start">
 <header>
     <div id="LOGO" title="Automotify Autoglas" onclick="location='http://www.bucsi.com'"></div>
-    <div id="login"><form name="form"><input type="text" name="email" id="log_email"	placeholder="email" required class="log_email"><input type="password" name="password" id="log_passord" placeholder="password" required class="log_input"><input type="submit" name="Login" id="LoginButton" value="" class="sub_input"></form></div>
+
+	<form id="LOGIN" name="form" action="backend/terminverwaltung.html">
+		<input type="text" 		name="log_email" 	id="log_email"		placeholder="username" required class="log_input">
+		<input type="password" 	name="log_password" id="log_password"	placeholder="password" required class="log_input">
+		<input type="submit" 	name="Login" 	id="LoginButton" 	value=""	 					class="sub_input">
+	</form>
+
     <nav id="sitenav">
 		<div></div>
         <ul>
-			<li onclick="location='service.html'"><a href="service.html">Service</a></li><li onclick="location='termin.html'"><a href="termin.php">Termin vereinbaren!</a></li><li onclick="location='kontakt.html'"><a href="kontakt.html">Kontakt</a></li>
+			<li onclick="location='service.html'"><a href="service.html">Service</a></li><li onclick="location='termin.html'"><a href="termin.html">Termin vereinbaren!</a></li><li onclick="location='kontakt.html'"><a href="kontakt.html">Kontakt</a></li>
         </ul>
     </nav>
 </header>
