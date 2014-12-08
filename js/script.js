@@ -9,6 +9,36 @@ window.onload = function() {
 	}
 }
 
+function showFixedScreen(){
+    bodyTag = document.getElementById('start');
+    bodyTag.style.background = 'url(img/stripes.png), url(img/bmw_riss.jpg) no-repeat center';
+    bodyTag.style.backgroundSize = 'cover';
+    bodyTag.style.backgroundAttachment = 'fixed';
+    changeBgImage(bodyTag);
+
+    setTimeout(function(){
+        var welcome = document.getElementById('welcome');
+        welcome.setAttribute("style", "display: block;");
+    },4000);
+    setTimeout(function(){document.location="service.html";},24000);
+}
+
+function changeBgImage(element){
+    element.style.setProperty("transition", 		"all 6s ease");
+    element.style.setProperty("-webkit-transition", "all 6s ease");
+    element.style.setProperty("-moz-transition", 	"all 6s ease");
+    element.style.setProperty("-o-transition", 		"all 6s ease");
+    element.style.setProperty("-ms-transition", 	"all 6s ease");
+    element.style.background = 'url(img/stripes.png), url(img/bmw_ohne.jpg) no-repeat center';
+    element.style.backgroundSize = 'cover';
+    element.style.backgroundAttachment = 'fixed';
+
+}
+
+/**
+ * START
+ * Adding Event Listeners
+ */
 function addLogInListener(){
     document.getElementById('log_email').   addEventListener('keyup', validateEmail,         true);
     document.getElementById('log_password').addEventListener('keyup', validatePasswordChars, true);
@@ -91,32 +121,4 @@ function validateTSN() {
         element.setAttribute("style", "box-shadow: 0 0 20px #3A2;");
         element.value = element.value.toUpperCase();
     }
-}
-
-
-
-function showFixedScreen(){
-    bodyTag = document.getElementById('start');
-    bodyTag.style.background = 'url(img/stripes.png), url(img/bmw_riss.jpg) no-repeat center';
-    bodyTag.style.backgroundSize = 'cover';
-    bodyTag.style.backgroundAttachment = 'fixed';
-	changeBgImage(bodyTag);
-
-    setTimeout(function(){
-                var welcome = document.getElementById('welcome');
-                welcome.setAttribute("style", "display: block;");
-              },4000);
-    setTimeout(function(){document.location="service.html";},24000);
-}
-
-function changeBgImage(element){
-	element.style.setProperty("transition", 		"all 6s ease");
-	element.style.setProperty("-webkit-transition", "all 6s ease");
-	element.style.setProperty("-moz-transition", 	"all 6s ease");
-	element.style.setProperty("-o-transition", 		"all 6s ease");
-	element.style.setProperty("-ms-transition", 	"all 6s ease");
-	element.style.background = 'url(img/stripes.png), url(img/bmw_ohne.jpg) no-repeat center';
-	element.style.backgroundSize = 'cover';
-    element.style.backgroundAttachment = 'fixed';
-	
 }
