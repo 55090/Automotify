@@ -46,11 +46,14 @@ function addLogInListener(){
 }
 
 function addTerminListener(){
-    document.getElementById('Telefonnummer').addEventListener('keyup', validateTelefonNr,true);
-    document.getElementById('PLZ').          addEventListener('keyup', validateZipCode,  true);
-    document.getElementById('Email').        addEventListener('keyup', validateEmail,    true);
-    document.getElementById('HSN').          addEventListener('keyup', validateHSN,      true);
-    document.getElementById('TSN').          addEventListener('keyup', validateTSN,      true);
+    document.getElementById('Vorname').      addEventListener('keyup', validateAlphabeticFields, true);
+	document.getElementById('Nachname').     addEventListener('keyup', validateAlphabeticFields, true);
+	document.getElementById('Ort').          addEventListener('keyup', validateAlphabeticFields, true);
+	document.getElementById('Telefonnummer').addEventListener('keyup', validateTelefonNr,        true);
+    document.getElementById('PLZ').          addEventListener('keyup', validateZipCode,          true);
+    document.getElementById('Email').        addEventListener('keyup', validateEmail,            true);
+    document.getElementById('HSN').          addEventListener('keyup', validateHSN,              true);
+    document.getElementById('TSN').          addEventListener('keyup', validateTSN,              true);
 
 }
 
@@ -83,6 +86,17 @@ function validatePasswordChars(){
  * START
  * Termin Validations
  */
+ 
+function validateAlphabeticFields(){
+	var element = event.srcElement;
+	filter = /^[A-Za-z]{3,25}$/;
+    if (!filter.test(element.value)) {
+        element.setAttribute("style", "box-shadow: 0 0 20px #F00;");
+    } else {
+		element.setAttribute("style", "box-shadow: 0 0 20px #3A2;");
+    }
+}
+
 function validateZipCode(){
     var element = event.srcElement;
     filter = /^([0]{1}[1-9]{1}|[1-9]{1}[0-9]{1})[0-9]{3}$/;
@@ -114,12 +128,12 @@ function validateHSN() {
 }
 function validateTSN() {
     var element = event.srcElement;
-    filter = /^[A-Z]{3}$/;
+    filter = /^[A-Z]{3}$|^[0-9]{3}$/;
     if (!filter.test(element.value.toUpperCase())) {
         element.setAttribute("style", "box-shadow: 0 0 20px #F00;");
         element.value = element.value.toUpperCase();
     } else {
-        element.setAttribute("style", "box-shadow: 0 0 20px #3A2;");
+		element.setAttribute("style", "box-shadow: 0 0 20px #3A2;");
         element.value = element.value.toUpperCase();
     }
 }
