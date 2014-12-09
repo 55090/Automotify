@@ -89,7 +89,7 @@ function validatePasswordChars(){
  
 function validateAlphabeticFields(){
 	var element = event.srcElement;
-	filter = /^[A-Za-z]{3,25}$/;
+	filter = /^[A-Za-zäöüÄÖÜß]{3,25}$/;
     if (!filter.test(element.value)) {
         element.setAttribute("style", "box-shadow: 0 0 20px #F00;");
     } else {
