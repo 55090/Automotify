@@ -13,7 +13,7 @@ body {
     color: #777;
 }
 
-.text-primary {                     //buttoncolor
+.text-primary {                                                                 /*buttoncolor*/
     color: #f3591D2;
 }
 
@@ -126,7 +126,7 @@ fieldset[disabled] .btn-primary.active {
     font-size: 18px;
     font-weight: 700;
     color: #fff;
-    background-color: #ff0000;                                                              //Buttons SendMessage,Tell me More
+    background-color: #ff0000;                                                              /*Buttons SendMessage,Tell me More*/
 }
 
 .btn-xl:hover,
@@ -176,7 +176,7 @@ fieldset[disabled] .btn-xl.active {
 
 .navbar-default .navbar-brand {
     font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
-    color: #fed136;                                                                 //oben links Start Bootstrap
+    color: #fed136;                                                                                            /*oben links Start Bootstrap*/
 }
 
 .navbar-default .navbar-brand:hover,
@@ -221,13 +221,13 @@ fieldset[disabled] .btn-xl.active {
 .navbar-default .navbar-nav>.active>a {
     border-radius: 0;
     color: #fff;
-    background-color: #5577cc;                          //Menucolor Navigation
-}
+    background-color: #5577cc;                                                          /*Menucolor Navigation*/
+            }
 
 .navbar-default .navbar-nav>.active>a:hover,
 .navbar-default .navbar-nav>.active>a:focus {
     color: #fff;
-    background-color: #ff0000;                          //Menucolor Navigation Hover
+    background-color: #ff0000;                                                                         /*Menucolor Navigation Hover*/
 }
 
 @media(min-width:768px) {
