@@ -337,12 +337,18 @@
       <option name="project" value="LOCAL" />
       <updated>1419338922288</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Motify mit Php1&#10;">
+      <created>1419338953420</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1419338953420</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1931" y="15" width="1938" height="1050" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -385,7 +391,8 @@
     <MESSAGE value="Motify mit Bootstrap Framework" />
     <MESSAGE value="Motify mit Bootstrap" />
     <MESSAGE value="Motify mit Php&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Motify mit Php&#10;" />
+    <MESSAGE value="Motify mit Php1&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Motify mit Php1&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

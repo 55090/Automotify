@@ -9,7 +9,7 @@
 <?php
 echo "Ihre EIngaben<br /n>\n";
 echo "Username:" .htmlspecialchars($_GET["username"]) . "<br /n";
-echo "Password:" .htmlspecialchars($_GET["passwwerord"]) . "<br /n";
+echo "Password:" .htmlspecialchars($_GET["password"]) . "<br /n";
 ?>
 </body>
 </html>
