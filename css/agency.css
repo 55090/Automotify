@@ -865,7 +865,7 @@ body {
                                                                     /*formular*/
 
 body{
-    margin-top:40px;
+
 }
 
 .stepwizard-step p {
@@ -913,4 +913,15 @@ body{
     font-size: 12px;
     line-height: 1.428571429;
     border-radius: 15px;
+}
+
+
+form.navbar-form.navbar-right{                     /*Login nach rechts*/
+    position: relative;
+
+    max-width: 0%;
+
+}
+form.navbar-form.navbar-right div input{
+
 }
