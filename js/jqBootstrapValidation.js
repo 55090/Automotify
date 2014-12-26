@@ -517,7 +517,7 @@
             $this.unbind('.validation'); // events are namespaced.
             // reset help text
             $helpBlock.html($helpBlock.data("original-contents"));
-            // reset classesrweqr
+            // reset classes
             $controlGroup.attr("class", $controlGroup.data("original-classes"));
             // reset aria
             $this.attr("aria-invalid", $this.data("original-aria-invalid"));
