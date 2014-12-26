@@ -1,47 +1,41 @@
 <?php
-    require("config.php");
-    $submitted_username = '';
-    if(!empty($_POST)){
-        $query = "
-            SELECT
-                id, username,password,salt,email
-            FROM users
-            WHERE username = :username
-        ";
-        $query_params = array(
-            ':username' => $_POST['username']
-);
+session_start();
+$verhalten = 0;
 
-try{
-$stmt = $db->prepare($query);
-$result = $stmt->execute($query_params);
+if(!isset($_SESSION["username"]) and !isset($_GET["page"])) {
+    $verhalten=0;
 }
-catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); }
-$login_ok = false;
-$row = $stmt->fetch();
-if($row){
-$check_password = hash('sha256', $_POST['password'] . $row['salt']);
-for($round = 0; $round < 65536; $round++){
-$check_password = hash('sha256', $check_password . $row['salt']);
-}
-if($check_password === $row['password']){
-$login_ok = true;
-}
-}
+if($_GET["page"] == "log")  {
+    /*
+        $user = $_POST["user"];
+        $password = $_POST["password"];
+    */
+    $user = strtolower($_POST["user"]);
+    $password = md5($_POST["password"]);
 
-if($login_ok){
-unset($row['salt']);
-unset($row['password']);
-$_SESSION['user'] = $row;
-header("Location: secret.php");
-die("Redirecting to: secret.php");
+    $verbindung = mysql_connect("localhost", "root", "")
+    or die ("Fehler im System");
+
+    mysql_select_db("php")
+    or die ("Verbindung zur Datenbank war nicht möglich");
+
+    $control = 0;
+    $abfrage = "SELECT * FROM login WHERE username = '$user' AND password = '$password'";
+    $ergebnis = mysql_query($abfrage);
+    while ($row = mysql_fetch_object($ergebnis))
+    {
+        $control++;
+    }
+
+    if($control != 0)  {
+        $_SESSION["username"] = $user;
+        $verhalten = 1;
+    } else{
+        $verhalten = 2;
+    }
 }
-else{
-print("Login Failed.");
-$submitted_username = htmlentities($_POST['username'], ENT_QUOTES, 'UTF-8');
-}
-}
-?> <!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html lang="de">
 
 <head>
@@ -74,7 +68,13 @@ $submitted_username = htmlentities($_POST['username'], ENT_QUOTES, 'UTF-8');
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <script src="js/agency.js"></script>
     <![endif]-->
-
+    <?php
+    if($verhalten == 1) {
+        ?>
+        <meta http-equiv="refresh" content="3; URL=seite2.php" />
+    <?php
+    }
+    ?>
 </head>
 
 <body id="page-top" class="index">
@@ -114,23 +114,36 @@ $submitted_username = htmlentities($_POST['username'], ENT_QUOTES, 'UTF-8');
                         <a class="page-scroll" href="#termin">Termin vereinbaren</a>
                     </li>
 
-                class="nav pull-right">
-                        <li><a href="register.php">Register</a></li>
+<?php if($verhalten==0){?>
+
                        <li class="divider-vertical"></li>
                         <li class="dropdown">
                             <a class="dropdown-toggle" href="#" data-toggle="dropdown">Log In <strong class="caret"></strong></a>
                             <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
-                                <form action="index.php" method="post">
+                                <form action="index.php?page=log" method="post">
                                     Username:<br />
-                                    <input type="text" name="username" value="<?php echo $submitted_username; ?>" />
+                                    <input type="text" name="user"  />
                                     <br /><br />
                                     Password:<br />
                                     <input type="password" name="password" value="" />
                                     <br /><br />
-                                    <input type="submit" class="btn btn-info" value="Login" />
+                                    <input type="submit" class="btn btn-info" value="Einloggen" />
                                 </form>
                             </div>
-                        </li>
+                        </li><p><a href="register.php">Noch nicht dabei? Jetzt registrieren...</a></p>
+<?php
+}
+if($verhalten == 1)     {
+    ?>
+    Du hast dich richtig eingeloggt und wirst nun weitergeleitet....
+<?php
+}
+if($verhalten == 2)     {
+    ?>
+    Du hast dich nicht richtig eingeloggt, <a href="index.php">zurueck</a>.
+<?php
+}
+?>
                     </ul>
                     </div>
 
