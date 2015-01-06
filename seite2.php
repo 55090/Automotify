@@ -1,122 +1,147 @@
 <?php
 session_start();
 if(isset($_SESSION["username"]))   {
-    ?>
-<html>
+?>
+    <html>
     <head>
         <title>Geschuetzter Bereich</title>
     </head>
 
-</html><!DOCTYPE html>
-    <html lang="de">
+    </html><!DOCTYPE html>
+<html lang="de">
 
-    <head>
+<head>
 
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-        <title>Automotify Theme</title>
+    <title>Automotify Theme</title>
 
-        <!-- Bootstrap Core CSS -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-        <!-- Custom CSS -->
-        <link href="css/agency.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/agency.css" rel="stylesheet">
 
-        <!-- Custom Fonts -->
-        <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-        <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <!-- Custom Fonts -->
+    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
+          type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <script src="js/agency.js"></script>
-        <![endif]-->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="js/agency.js"></script>
+    <![endif]-->
 
-    </head>
+</head>
 
-    <body id="page-top" class="index">
-    <div class="navbar-brand page-scroll" href="#page-top"></div>
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <!--hier Logo einfügen für Navigation-->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+<body id="page-top" class="index">
+<div class="navbar-brand page-scroll" href="#page-top"></div>
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <!--hier Logo einfügen für Navigation-->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
 
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar">
+            <li class="hidden">
+                <a href="#page-top"></a>
+            </li>
+            <li class="navbar-header page-scroll" href="#page-top"><img class="navbar- navbar-left"
+                                                                        src="img/automotify-autoglas-logo_smartphone1.png">
+            </li>
+            <li>
+                <a class="page-scroll" href="#service">Terminverwaltung</a>
+            </li>
+
+
+            <li><a href="logout.php">Ausloggen</a></li>
+
+
+            <!-- /.navbar-collapse -->
+
+            <!-- /.container-fluid -->
+</nav>
+
+<!-- Header -->
+<header>
+    <div class="container">
+        <div class="intro-text">
+            <div class="intro-text"><h3>Herzlich Willkommen <?php echo $_SESSION["username"]; ?> im Backend-Bereich von
+                    Automotify </h3></div>
+
+            <a href="#service" class="page-scroll btn btn-xl">Terminverwaltung</a>
         </div>
+    </div>
+</header>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
+<?php
+$verbindung = mysql_connect("localhost", "root", "bujaka")
+or die ("Fehler im System");
 
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar">
-                <li class="hidden">
-                    <a href="#page-top"></a>
-                </li>
-                <li class="navbar-header page-scroll" href="#page-top"> <img class="navbar- navbar-left" src="img/automotify-autoglas-logo_smartphone1.png">   </li>
-                <li>
-                    <a class="page-scroll" href="#service">Terminverwaltung</a>
-                </li>
+mysql_select_db("php")
+or die ("Verbindung zur Datenbank war nicht möglich");
+
+$control = 0;
+$abfrage = "SELECT * FROM kunden,fahrzeug,termin WHERE t_id=k_id AND k_id=f_id";
+$ergebnis = mysql_query($abfrage);
+?>
+<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+
+<tr>
+    <th>Datum</th>
+    <th>Uhrzeit</th>
+    <th>Fahrzeug</th>
+    <th>Nachname</th>
+    <th>Vorname</th>
+    <th>Telefon</th>
+    <th>E-Mail</th>
+</tr>
+
+<?php
 
 
-                <li><a href="logout.php">Ausloggen</a></li>
-
-
-
-        <!-- /.navbar-collapse -->
-
-        <!-- /.container-fluid -->
-    </nav>
-
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="intro-text">
-                <div class="intro-text"><h3>Herzlich Willkommen <?php echo $_SESSION["username"]; ?> im Backend-Bereich von Automotify </h3></div>
-
-                <a href="#service" class="page-scroll btn btn-xl">Terminverwaltung</a>
-            </div>
-        </div>
-    </header>
-
-    <?php
-    $verbindung = mysql_connect("localhost", "root", "bujaka")
-    or die ("Fehler im System");
-
-    mysql_select_db("php")
-    or die ("Verbindung zur Datenbank war nicht möglich");
-
-    $control = 0;
-    $abfrage = "SELECT * FROM login";
-    $ergebnis = mysql_query($abfrage);
     while($row = mysql_fetch_object($ergebnis))
+
     {
-        ?>
-    <p>
-        Id:<b><?php echo $row->login_id; ?></b><br />
-        Username:<b><?php echo $row->username; ?></b><br />
-        Passwort:<b><?php echo $row->password; ?></b><br />
-    </p>
-</hr>
+?>
+   <tr>
+        <td><?php echo $row->datum ?></td>
+        <td><?php echo $row->uhrzeit ?></td>
+        <td><?php echo $row->fahrzeug ?></td>
+        <td><?php echo $row->nachname?></td>
+        <td><?php echo $row->vorname ?></td>
+        <td><?php echo $row->telefon ?></td>
+        <td><?php echo $row->email ?></td>
+</tr>
+
+
     <?php
 
     }
     mysql_close($verbindung);
     ?>
-
+</table>
     <!-- Service Section -->
     <section id="service">
         <div class="container">
