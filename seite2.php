@@ -104,14 +104,16 @@ or die ("Verbindung zur Datenbank war nicht möglich");
 
 $control = 0;
 $abfrage = "SELECT * FROM kunden,fahrzeug,termin WHERE t_id=k_id AND k_id=f_id";
+$abfrageTermin = "SELECT * FROM termine";
 $ergebnis = mysql_query($abfrage);
+$ergebnisTermin= mysql_query($abfrageTermin);
 ?>
 <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
 
 <tr>
-    <th>Datum</th>
-    <th>Uhrzeit</th>
-    <th>Fahrzeug</th>
+    <th>Vorname</th>
+    <th>Nachname</th>
+    <th>Strasse</th>
     <th>Nachname</th>
     <th>Vorname</th>
     <th>Telefon</th>
@@ -119,19 +121,16 @@ $ergebnis = mysql_query($abfrage);
 </tr>
 
 <?php
-
-
-    while($row = mysql_fetch_object($ergebnis))
-
+    while($row = mysql_fetch_object($ergebnisTermin))
     {
 ?>
    <tr>
-        <td><?php echo $row->datum ?></td>
-        <td><?php echo $row->uhrzeit ?></td>
-        <td><?php echo $row->fahrzeug ?></td>
-        <td><?php echo $row->nachname?></td>
-        <td><?php echo $row->vorname ?></td>
-        <td><?php echo $row->telefon ?></td>
+        <td><?php echo $row->v_name ?></td>
+        <td><?php echo $row->n_name ?></td>
+        <td><?php echo $row->strasse ?></td>
+        <td><?php echo $row->plz?></td>
+        <td><?php echo $row->ort ?></td>
+        <td><?php echo $row->telnr ?></td>
         <td><?php echo $row->email ?></td>
 </tr>
 

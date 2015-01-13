@@ -1,5 +1,14 @@
 ﻿<?php
 
+$verbindung = mysql_connect("localhost", "root", "bujaka")
+or die ("Fehler im System");
+mysql_select_db("php")
+or die ("Verbindung zur Datenbank war nicht möglich");
+
+ echo $form_data['Vorname'];
+    echo $name1;
+mysql_close();
+
 $mail_address = 'info@glashub.de';
 
 

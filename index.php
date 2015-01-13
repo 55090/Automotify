@@ -2,13 +2,18 @@
 session_start();
 $verhalten = 0;
 
+$name1 ='bla';
+
+
 if(!isset($_SESSION["username"]) and !isset($_GET["page"])) {
     $verhalten=0;
 }
-if($_GET["page"] == "log") {
+if(isset($_GET["page"]) == "log") {
 
     $user = strtolower($_POST["user"]);
     $password = md5($_POST["password"]);
+
+
 
     $verbindung = mysql_connect("localhost", "root", "bujaka")
     or die ("Fehler im System");
@@ -27,6 +32,15 @@ $verhalten = 1;
 } else{
 $verhalten = 2;
 }
+    mysql_close($verbindung);
+}
+
+if (array_key_exists('submit', $_POST)) {
+    $verbindung1 = mysql_connect("localhost", "root", "bujaka") or die ("Fehler im System");
+    mysql_select_db("php")                                     or die ("Verbindung zur Datenbank war nicht möglich");
+    $terminEintragen = "INSERT INTO termine(v_name, n_name) VALUES ('vorname', 'nachname')";
+    $eintragen = mysql_query($terminintrag);
+    mysql_close($verbindung1);
 }
 ?>
 <!DOCTYPE html>
@@ -105,7 +119,7 @@ $verhalten = 2;
                         <a class="page-scroll" href="#contact">Kontakt</a>
                     </li>
 					<li>
-						<a  href="#LogInPopUp" data-toggle="modal">Login</a></li>
+						<a  href="#LogInPopUp" data-toggle="modal">Login</a></li
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -189,105 +203,6 @@ $verhalten = 2;
         </div>
     </section>
 
-    <!-- Portfolio Grid Section -->
-    <!--//
-	<section id="portfolio" class="bg-light-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Referenzen</h2>
-                    <h3 class="section-subheading text-muted">Was wir tun.</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/roundicons.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Round Icons</h4>
-                        <p class="text-muted">Graphic Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/startup-framework.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Startup Framework</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/treehouse.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Treehouse</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/golden.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Golden</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/escape.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Escape</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/dreams.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Dreams</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    //-->
 
     <!-- About Section -->
     <section id="about" class="bg-light-gray">
@@ -436,52 +351,6 @@ $verhalten = 2;
         </div>
     </section>
 
-    <!--[Start-Section contact]>
-    <section id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Contact Us</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <form name="sentMessage" id="contactForm" novalidate>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Your Name *" id="name" required data-validation-required-message="Please enter your name.">
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Your Email *" id="email" required data-validation-required-message="Please enter your email address.">
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="form-group">
-                                    <input type="tel" class="form-control" placeholder="Your Phone *" id="phone" required data-validation-required-message="Please enter your phone number.">
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <textarea class="form-control" placeholder="Your Message *" id="message" required data-validation-required-message="Please enter a message."></textarea>
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="col-lg-12 text-center">
-                                <div id="success"></div>
-                                <button type="submit" class="btn btn-xl">Send Message</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-    <![End-Section contact]-->
-
 	<section id="contact">
 		<div class="container">
 			<div class="row">
@@ -596,7 +465,7 @@ $verhalten = 2;
 											</div>
 										</div>
 									</div>
-									<form role="form">
+									<form role="form" method="post">
 										<div class="row setup-content" id="step-1">
 											<div class="col-xs-12"><h3> Ihre persönlichen Daten</h3>
 												<div class="col-md-6">
@@ -607,7 +476,7 @@ $verhalten = 2;
 													</div>
 													<div class="form-group">
 														<label class="control-label">Nachname</label>
-														<input name="nachname" id="nachname" maxlength="50" type="text"  class="form-control" placeholder="Nachname" required />
+														<input name="nachname" id="nachname" maxlength="50" type="text"  class="form-control" placeholder="Nachname" />
 													</div>
 													<div class="form-group">
 														<label class="control-label">Straße / Nr :</label>
@@ -615,22 +484,22 @@ $verhalten = 2;
 													</div>
 													<div class="form-group">
 														<label class="control-label">Postleitzahl</label>
-														<input name="plz" id="plz" maxlength="50" type="text" class="form-control" placeholder="Postleitzahl" required />
+														<input name="plz" id="plz" maxlength="50" type="text" class="form-control" placeholder="Postleitzahl"  />
 													</div>
 													<div class="form-group">
 														<label class="control-label">Ort</label>
-														<input name="ort" id="ort" maxlength="50" type="text"  class="form-control" placeholder="Ort" required />
+														<input name="ort" id="ort" maxlength="50" type="text"  class="form-control" placeholder="Ort"  />
 													</div>
 												</div>
 												<div class="col-md-6">
 
 													<div class="form-group">
 														<label class="control-label">Telefonnummer</label>
-														<input name="telefon" id="telefon" maxlength="50" type="tel" required class="form-control" placeholder="Telefonnummer"  />
+														<input name="telefon" id="telefon" maxlength="50" type="tel" class="form-control" placeholder="Telefonnummer"  />
 													</div>
 													<div class="form-group">
 														<label class="control-label">E-Mail-Adresse </label>
-														<input name="email" id="email" maxlength="50" type="Email" class="form-control" placeholder="E-Mail-Adresse" required />
+														<input name="email" id="email" maxlength="50" type="email" class="form-control" placeholder="E-Mail-Adresse" />
 													</div>
 													<button class="btn btn-danger nextBtn btn-lg pull-right" type="button" >Weiter</button>
 												</div>
@@ -642,7 +511,7 @@ $verhalten = 2;
 
 													<div class="form-group">
 														<label class="control-label">Fahrzeug:</label>
-														<input name="fahrzeug" id="fahrzeug" maxlength="50" type="text"  class="form-control" placeholder="z.B.: VW Passat Variant" required />
+														<input name="fahrzeug" id="fahrzeug" maxlength="50" type="text"  class="form-control" placeholder="z.B.: VW Passat Variant" />
 													</div>
 													<div class="form-group">
 														<label class="control-label">HSN (2.1):</label>
@@ -655,7 +524,7 @@ $verhalten = 2;
 													</div>
 													<div class="form-group">
 														<label class="control-label">Tag der Erstzulassung:</label>
-														<input name="baujahr" id="baujahr" maxlength="50" type="date" required="required" class="form-control" placeholder="Tag der Erstzulassung / Baujahr (TT.MM.JJJJ)"  />
+														<input name="baujahr" id="baujahr" maxlength="50" type="date" class="form-control" placeholder="Tag der Erstzulassung / Baujahr (TT.MM.JJJJ)"  />
 													</div>
 													<button class="btn btn-danger nextBtn btn-lg pull-right" type="button" >Weiter</button>
 												</div>
