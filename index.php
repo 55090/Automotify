@@ -1,3 +1,34 @@
+<?php
+session_start();
+$verhalten = 0;
+
+if(!isset($_SESSION["username"]) and !isset($_GET["page"])) {
+    $verhalten=0;
+}
+if($_GET["page"] == "log") {
+
+    $user = strtolower($_POST["user"]);
+    $password = md5($_POST["password"]);
+
+    $verbindung = mysql_connect("localhost", "root", "bujaka")
+    or die ("Fehler im System");
+    mysql_select_db("php")
+    or die ("Verbindung zur Datenbank war nicht möglich");
+    $control = 0;
+    $abfrage = "SELECT * FROM login WHERE username = '$user' AND password = '$password'";
+    $ergebnis = mysql_query($abfrage);
+while ($row = mysql_fetch_object($ergebnis))
+{
+$control++;
+}
+if($control != 0) {
+$_SESSION["username"] = $user;  //Adminnamen festlegen!
+$verhalten = 1;
+} else{
+$verhalten = 2;
+}
+}
+?>
 <!DOCTYPE html>
 <html lang="de">
 
@@ -30,7 +61,13 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+    <?php
+    if($verhalten == 1) {
+        ?>
+        <meta http-equiv="refresh" content="3; URL=seite2.php" />
+    <?php
+    }
+    ?>
 </head>
 
 <body id="page-top" class="index">
