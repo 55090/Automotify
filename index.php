@@ -22,6 +22,7 @@ if(isset($_GET["page"]) == "log") {
     $control = 0;
     $abfrage = "SELECT * FROM login WHERE username = '$user' AND password = '$password'";
     $ergebnis = mysql_query($abfrage);
+
 while ($row = mysql_fetch_object($ergebnis))
 {
 $control++;
@@ -35,13 +36,24 @@ $verhalten = 2;
     mysql_close($verbindung);
 }
 
-if (array_key_exists('submit', $_POST)) {
-    $verbindung1 = mysql_connect("localhost", "root", "bujaka") or die ("Fehler im System");
+
+    $vorname = htmlspecialchars($_POST["vorname"]);
+    $nachname = htmlspecialchars($_POST["nachname"]);
+    $strasse = htmlspecialchars($_POST["strasse"]);
+    $ort = htmlspecialchars($_POST["ort"]);
+    $telnr = htmlspecialchars($_POST["telnr"]);
+    $email = htmlspecialchars($_POST["email"]);
+    $fahrzeug = htmlspecialchars($_POST["fahrzeug"]);
+    $baujahr = htmlspecialchars($_POST["baujahr"]);
+    $nachricht = htmlspecialchars($_POST["nachricht"]);
+
+    echo "Tschakaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+    $verbindung1 = mysql_connect("localhost", "root", "") or die ("Fehler im System");
     mysql_select_db("php")                                     or die ("Verbindung zur Datenbank war nicht möglich");
-    $terminEintragen = "INSERT INTO termine(v_name, n_name) VALUES ('vorname', 'nachname')";
-    $eintragen = mysql_query($terminintrag);
+    $terminEintragen = "INSERT INTO termine(v_name, n_name, strasse, ort , telnr, email, fahrzeug, baujahr, nachricht) VALUES ('$vorname', '$nachname', '$strasse', '$ort', '$telnr', '$email', '$fahrzeug' , '$baujahr', '$nachricht')";
+    $eintragen = mysql_query($terminEintragen);
     mysql_close($verbindung1);
-}
+
 ?>
 <!DOCTYPE html>
 <html lang="de">

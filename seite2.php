@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+
+
+
+
 if(isset($_SESSION["username"]))   {
 ?>
     <html>
@@ -96,16 +101,15 @@ if(isset($_SESSION["username"]))   {
 </header>
 
 <?php
-$verbindung = mysql_connect("localhost", "root", "bujaka")
+$verbindung = mysql_connect("localhost", "root", "")
 or die ("Fehler im System");
 
 mysql_select_db("php")
 or die ("Verbindung zur Datenbank war nicht möglich");
 
 $control = 0;
-$abfrage = "SELECT * FROM kunden,fahrzeug,termin WHERE t_id=k_id AND k_id=f_id";
+
 $abfrageTermin = "SELECT * FROM termine";
-$ergebnis = mysql_query($abfrage);
 $ergebnisTermin= mysql_query($abfrageTermin);
 ?>
 <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
@@ -114,10 +118,12 @@ $ergebnisTermin= mysql_query($abfrageTermin);
     <th>Vorname</th>
     <th>Nachname</th>
     <th>Strasse</th>
-    <th>Nachname</th>
-    <th>Vorname</th>
+    <th>Ort</th>
     <th>Telefon</th>
-    <th>E-Mail</th>
+    <th>Email</th>
+    <th>Fahrzeug</th>
+    <th>Baujahr</th>
+    <th>Nachricht</th>
 </tr>
 
 <?php
@@ -128,10 +134,13 @@ $ergebnisTermin= mysql_query($abfrageTermin);
         <td><?php echo $row->v_name ?></td>
         <td><?php echo $row->n_name ?></td>
         <td><?php echo $row->strasse ?></td>
-        <td><?php echo $row->plz?></td>
-        <td><?php echo $row->ort ?></td>
-        <td><?php echo $row->telnr ?></td>
+        <td><?php echo $row->ort?></td>
+        <td><?php echo $row->telnr?></td>
         <td><?php echo $row->email ?></td>
+        <td><?php echo $row->fahrzeug ?></td>
+        <td><?php echo $row->baujahr ?></td>
+        <td><?php echo $row->nachricht ?></td>
+
 </tr>
 
 
