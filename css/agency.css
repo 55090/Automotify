@@ -795,6 +795,10 @@ ul.social-buttons li a:active {
     box-shadow: none;
 }
 
+.portfolio-modal .modal-content .form-group {
+	text-align: left;
+}
+
 .portfolio-modal .modal-content h2 {
     margin-bottom: 15px;
     font-size: 3em;
